@@ -7,4 +7,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+
+    .headerLogo  {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        left: 5%;
+    }
 }
