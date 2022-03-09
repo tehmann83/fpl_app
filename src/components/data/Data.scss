@@ -1,0 +1,67 @@
+@import '../../styles/variables';
+
+.smth {
+  //some CSS
+  @media screen and (max-width: $mediaWidth) {
+    //do Smth
+  }
+  @media screen and (min-width: $mediaWidth) {
+    //do Smth
+  }
+}
+
+.data{
+    margin-top: 40px;
+    @media screen and (max-width: $mediaWidth) {
+        padding: 10px 0px;
+      }
+      @media screen and (min-width: $mediaWidth) {
+        padding: 50px 0px;
+      }
+    
+    
+    .dataWrapper {
+        .dataTotals, .dataGW, .dataMove {
+            padding: 10px;
+            font-size: 20px;
+        }
+        @media screen and (max-width: $mediaWidth) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .dataTotals > p {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .dataGW > p {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .dataMove > p {
+                display: flex;
+                justify-content: space-between;
+            }
+          }
+          @media screen and (min-width: $mediaWidth) {
+              display: flex;
+              justify-content: space-evenly;              
+
+              p {
+                  display: flex;
+                  justify-content: space-between;
+              }
+          }
+
+        .arrowGreen {
+            color: green;
+        }
+
+        .arrowRed {
+            color: red;
+        }
+    }
+
+}
