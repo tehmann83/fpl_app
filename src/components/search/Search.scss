@@ -1,0 +1,45 @@
+@import '../../styles/variables';
+
+.search{
+    display: flex;
+
+    .searchForm {
+
+        .searchFormGroup {
+            display: flex;
+            align-items: center;
+            position: relative;
+            
+            .searchFormInput {
+                font-size: 30px;
+                border: 1px solid $main_blue;
+                padding: 4px;
+                width: 300px;
+            }
+
+            .searchClear {
+                border-radius: 50%;
+                height: 50%; 
+                position: absolute;
+                top: 25%;
+                bottom: 0;
+                right: 18%;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .searchSubmit {
+                margin-left: 20px;
+                color: white;
+                background-color: $main_blue;
+                padding: 10px;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+        }
+    }
+}
