@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+
+.header{
+    background-color: $main_black;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
