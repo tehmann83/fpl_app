@@ -4,6 +4,8 @@ import { Button, Form } from 'react-bootstrap';
 import { Context } from '../../context/Context';
 import './Search.scss';
 
+const MAX_ID_NUMBER = 8999999;
+
 const Search = () => {
 	const [userId, setUserId] = useState('');
 	const [, setContext] = useContext(Context);
@@ -33,10 +35,11 @@ const Search = () => {
 				<Form.Group className="searchFormGroup">
 					<Form.Control
 						className="searchFormInput"
-						type="text"
 						placeholder="Enter your FPL ID..."
 						onChange={e => setUserId(e.target.value)}
 						value={userId}
+						type="number"
+						max={MAX_ID_NUMBER}
 					/>
 					<Button
 						className="searchClear"
