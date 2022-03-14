@@ -1,0 +1,13 @@
+.arrow {
+    display: flex;
+    justify-content: center;
+    font-size: 55px;
+
+    .arrowGreen {
+        color: green;
+    }
+
+    .arrowRed {
+        color: red;
+    }
+}
