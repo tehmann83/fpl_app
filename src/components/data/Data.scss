@@ -36,12 +36,7 @@
 
         @media screen and (min-width: $mediaWidth) {
             display: flex;
-            justify-content: space-evenly;              
-
-            p {
-                display: flex;
-                justify-content: space-between;
-            }
+            justify-content: space-evenly;
         }
     }
 
