@@ -17,8 +17,13 @@
             font-size: 20px;
 
             border: 4px solid transparent;
-            border-image: linear-gradient(45deg, $main_black , $main_blue);
             border-image-slice: 1;
+            background: 
+                linear-gradient(to right, white, white), 
+                linear-gradient(to right bottom, $main_blue, $main_black); 
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            border-radius: 10px;
         }
         @media screen and (max-width: $mediaWidth) {
             display: flex;
