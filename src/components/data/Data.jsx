@@ -5,7 +5,6 @@ import StatHeader from '../statHeader/StatHeader';
 import './Data.scss';
 
 const Data = ({ data }) => {
-	/* const [context] = useContext(Context); */
 	const [liveRank, setLiveRank] = useState(0);
 	const [thisGwRank, setThisGwRank] = useState(0);
 	const [lastGwRank, setlastGwRank] = useState(0);

@@ -1,15 +1,5 @@
 @import '../../styles/variables';
 
-.smth {
-  //some CSS
-  @media screen and (max-width: $mediaWidth) {
-    //do Smth
-  }
-  @media screen and (min-width: $mediaWidth) {
-    //do Smth
-  }
-}
-
 .data{
     margin-top: 40px;
     @media screen and (max-width: $mediaWidth) {
