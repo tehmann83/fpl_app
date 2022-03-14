@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import Arrow from '../arrow/Arrow';
+import SingleStat from '../SingleStat/SingleStat';
+import StatHeader from '../statHeader/StatHeader';
 import './Data.scss';
 
 const Data = ({ data }) => {
@@ -6,6 +9,7 @@ const Data = ({ data }) => {
 	const [liveRank, setLiveRank] = useState(0);
 	const [thisGwRank, setThisGwRank] = useState(0);
 	const [lastGwRank, setlastGwRank] = useState(0);
+	const [pctChange, setPctChange] = useState(0);
 	const [totalPoints, setTotalPoints] = useState(0);
 	const [hits, setHits] = useState(0);
 	const [rankMove, setRankMove] = useState(0);
@@ -19,6 +23,9 @@ const Data = ({ data }) => {
 			setTotalPoints(data.total);
 			setHits(data.hits);
 			setRankMove(data.last_gw - data.rank);
+
+			const pctMoveRank = ((1 - data.rank / data.last_gw) * 100).toFixed(2);
+			setPctChange(pctMoveRank);
 		}
 
 		if (rankMove > 0) {
@@ -33,41 +40,21 @@ const Data = ({ data }) => {
 			{liveRank && (
 				<div className="dataWrapper">
 					<div className="dataTotals">
-						<p className="liveRank">
-							<span>Live rank: </span>
-							<span>{liveRank}</span>
-						</p>
-						<p className="totalPoints">
-							<span>Total points: </span>
-							<span>{totalPoints}</span>
-						</p>
+						<StatHeader title="LIVE" />
+						<SingleStat data={liveRank} label="Live rank" />
+						<SingleStat data={totalPoints} label="Total points" />
+						<SingleStat classname="hits" data={hits} label="Hits" />
 					</div>
 					<div className="dataGW">
-						<p className="thisGwRank">
-							<span>This GW: </span>
-							<span> {thisGwRank}</span>
-						</p>
-						<p className="lastGwRank">
-							<span>Last GW: </span>
-							<span>{lastGwRank}</span>
-						</p>
-						<p className="hits">
-							<span>Hits: </span>
-							<span>{hits}</span>
-						</p>
+						<StatHeader title="GW Ranks" />
+						<SingleStat data={thisGwRank} label="This GW" />
+						<SingleStat data={lastGwRank} label="Last GW" />
 					</div>
 					<div className="dataMove">
-						<p className="rankMove">
-							<span>Rank move: </span>
-							<span>
-								{rankMove}{' '}
-								{arrow ? (
-									<i class="arrowGreen fa-solid fa-arrow-up"></i>
-								) : (
-									<i class="arrowRed fa-solid fa-arrow-down"></i>
-								)}
-							</span>
-						</p>
+						<StatHeader title="GW Move" />
+						<SingleStat data={rankMove} label="Rank move" />
+						<SingleStat data={pctChange} label="% change" pct />
+						<Arrow arrow={arrow} />
 					</div>
 				</div>
 			)}

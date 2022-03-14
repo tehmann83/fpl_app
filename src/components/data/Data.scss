@@ -23,27 +23,17 @@
     .dataWrapper {
         .dataTotals, .dataGW, .dataMove {
             padding: 10px;
+            margin-bottom: 20px;
             font-size: 20px;
+
+            border: 4px solid transparent;
+            border-image: linear-gradient(45deg, $main_black , $main_blue);
+            border-image-slice: 1;
         }
         @media screen and (max-width: $mediaWidth) {
             display: flex;
             flex-direction: column;
             align-items: center;
-
-            .dataTotals > p {
-                display: flex;
-                justify-content: space-between;
-            }
-
-            .dataGW > p {
-                display: flex;
-                justify-content: space-between;
-            }
-
-            .dataMove > p {
-                display: flex;
-                justify-content: space-between;
-            }
           }
           @media screen and (min-width: $mediaWidth) {
               display: flex;
@@ -55,13 +45,7 @@
               }
           }
 
-        .arrowGreen {
-            color: green;
-        }
-
-        .arrowRed {
-            color: red;
-        }
+        
     }
 
 }
